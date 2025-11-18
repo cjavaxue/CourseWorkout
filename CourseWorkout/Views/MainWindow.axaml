@@ -1,0 +1,151 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CourseWorkout.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="CourseWorkout.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="选择题刷题应用"
+        MinWidth="800"
+        MinHeight="600">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,Auto">
+        <!-- 主体区域 -->
+        <ScrollViewer Grid.Row="0" Margin="10">
+            <ItemsControl ItemsSource="{Binding CurrentPageQuestions}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="4"
+                                Margin="0,0,0,15"
+                                Padding="15">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="{Binding Id, StringFormat='第{0}题'}" 
+                                           FontWeight="Bold"
+                                           Margin="0,0,0,0"/>
+                                <!-- 题干 -->
+                                <TextBlock Text="{Binding Title}" 
+                                           FontSize="14"
+                                           TextWrapping="Wrap"
+                                           Margin="0,0,0,10"/>
+                                
+                                <!-- 选项 -->
+                                <RadioButton GroupName="{Binding Id, StringFormat='Question{0}'}"
+                                             Tag="a"
+                                             FontSize="12"
+                                             Checked="OnAnswerChecked"
+                                             Unchecked="OnAnswerUnchecked">
+                                    <TextBlock>
+                                        <Run Text="a. "/>
+                                        <Run Text="{Binding Options[a]}"/>
+                                    </TextBlock>
+                                </RadioButton>
+                                <RadioButton GroupName="{Binding Id, StringFormat='Question{0}'}"
+                                             Tag="b"
+                                             FontSize="12"
+                                             Checked="OnAnswerChecked"
+                                             Unchecked="OnAnswerUnchecked">
+                                    <TextBlock>
+                                        <Run Text="b. "/>
+                                        <Run Text="{Binding Options[b]}"/>
+                                    </TextBlock>
+                                </RadioButton>
+                                <RadioButton GroupName="{Binding Id, StringFormat='Question{0}'}"
+                                             Tag="c"
+                                             FontSize="12"
+                                             Checked="OnAnswerChecked"
+                                             Unchecked="OnAnswerUnchecked">
+                                    <TextBlock>
+                                        <Run Text="c. "/>
+                                        <Run Text="{Binding Options[c]}"/>
+                                    </TextBlock>
+                                </RadioButton>
+                                <RadioButton GroupName="{Binding Id, StringFormat='Question{0}'}"
+                                             Tag="d"
+                                             FontSize="12"
+                                             Checked="OnAnswerChecked"
+                                             Unchecked="OnAnswerUnchecked">
+                                    <TextBlock>
+                                        <Run Text="d. "/>
+                                        <Run Text="{Binding Options[d]}"/>
+                                    </TextBlock>
+                                </RadioButton>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- 底部区域 -->
+        <Border Grid.Row="1" 
+                Background="#333333" 
+                Padding="10">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <!-- 左侧按钮组 -->
+                <StackPanel Grid.Column="0" 
+                            Orientation="Horizontal" 
+                            Spacing="10">
+                    <Button Content="上一页" 
+                            Command="{Binding GoPreviousCommand}"
+                            IsEnabled="{Binding CanGoPrevious}"
+                            Background="#4CAF50"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"/>
+                    <Button Content="下一页" 
+                            Command="{Binding GoNextCommand}"
+                            IsEnabled="{Binding CanGoNext}"
+                            Background="#2196F3"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"/>
+                    <Button Content="提交答案" 
+                            Command="{Binding SubmitPageAnswersCommand}"
+                            Background="#FF9800"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"/>
+                    <Button Content="查看错题" 
+                            Command="{Binding ViewWrongQuestionsCommand}"
+                            Background="#9C27B0"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"/>
+                    <Button Content="清除错题" 
+                            Command="{Binding ClearWrongMarksCommand}"
+                            Background="#F44336"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"/>
+                </StackPanel>
+
+                <!-- 中间信息 -->
+                <StackPanel Grid.Column="1" 
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                            Spacing="15">
+                    <TextBlock FontSize="12" Foreground="#E0E0E0">
+                        <Run Text="{Binding CurrentPage}"/>
+                        <Run Text="/"/>
+                        <Run Text="{Binding TotalPages}"/>
+                    </TextBlock>
+                    <TextBlock FontSize="12" Foreground="#E0E0E0" Text="{Binding CurrentPageAccuracy, StringFormat='正确率：{0:F2}%'}"/>
+                    <TextBlock FontSize="12" Foreground="#E0E0E0">
+                        <Run Text="已答题："/>
+                        <Run Text="{Binding GlobalAnsweredCount}"/>
+                        <Run Text="/"/>
+                        <Run Text="{Binding TotalQuestionCount}"/>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
