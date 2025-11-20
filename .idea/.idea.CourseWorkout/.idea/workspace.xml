@@ -8,20 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855d97fc-9c93-40d9-ab25-a562e6369643" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/App.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/App.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/Assets/avalonia-logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/CourseWorkout.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/Resources/Questions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/ViewLocator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/ViewModels/ViewModelBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CourseWorkout/app.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +17,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;cjavaxue&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/cjavaxue/CourseWorkout.git&quot;,
+    &quot;accountId&quot;: &quot;be3f53f6-2ce1-49f9-9b56-5c5f98c050c2&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CourseWorkout.Tests/MainWindowViewModelTests.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -45,7 +47,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -90,11 +92,168 @@
       <workItem from="1763272596366" duration="2312000" />
       <workItem from="1763274940602" duration="168000" />
       <workItem from="1763453441182" duration="64000" />
+      <workItem from="1763608232755" duration="578000" />
+      <workItem from="1763627464713" duration="735000" />
+      <workItem from="1763634958688" duration="1442000" />
+      <workItem from="1763636528458" duration="256000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="ASCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="607" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 612/612" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 612/612" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 604/604" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 612/612" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 604/604" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="ViewModels 0% 140/140" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 612/612" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 604/604" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="ViewModels 0% 140/140" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MainWindowViewModel 0% 140/140" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout 0% 612/612" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CompiledAvaloniaXaml 0% 8/8" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1AnswerStatsTests 0% 46/46" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1AnswerStatsTests 0% 46/46" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GetAnswerStats_With10Questions8Correct_ShouldReturn80Percent() 0% 24/24" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1AnswerStatsTests 0% 46/46" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="GetAnswerStats_WithNoAnswers_ShouldReturn0Percent() 0% 12/12" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="InitializeAsync_WithMissingOptions_ShouldThrowArgumentException() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="InitializeAsync_WithMissingOptions_ShouldThrowArgumentException() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MoveNext() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="InitializeAsync_WithInvalidAnswer_ShouldThrowArgumentException() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="InitializeAsync_WithInvalidAnswer_ShouldThrowArgumentException() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MoveNext() 0% 9/9" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="SaveAnswerAsync_WithInvalidAnswer_ShouldThrowArgumentException() 0% 10/10" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1FormatValidationTests 0% 38/38" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="SaveAnswerAsync_WithInvalidAnswer_ShouldThrowArgumentException() 0% 10/10" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="MoveNext() 0% 10/10" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1PaginationTests 0% 48/48" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 0% 962/962" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="CourseWorkout.Tests 0% 350/350" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Service1WrongQuestionsTests 0% 45/45" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
