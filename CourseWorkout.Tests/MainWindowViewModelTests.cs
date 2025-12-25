@@ -158,6 +158,7 @@ public class MainWindowViewModelTests
         var questions = new List<Question> { new Question { Id = 1 } };
         mockService1.Setup(s => s.GetPageQuestions(1)).Returns((questions, 1));
         mockService1.Setup(s => s.GetAnswerStats()).Returns((80.0, 5, 10));
+        mockService1.Setup(s => s.GetTimeStats()).Returns((5, 5));
         var vm = new MainWindowViewModel(mockService1.Object, mockMessage.Object);
         
         // 反射调用 LoadPage 加载题目
@@ -170,9 +171,10 @@ public class MainWindowViewModelTests
         await vm.SubmitPageAnswersCommand.ExecuteAsync(null);
 
         // Assert
-        mockService1.Verify(s => s.SaveAnswerAsync(1, "a"), Times.Once);
-        // 修正：实际会在初始化、加载页面、提交后共调用3次
-        mockService1.Verify(s => s.GetAnswerStats(), Times.Exactly(3));
+        mockService1.Verify(s => s.SaveAnswerAsync(1, "a", It.IsAny<int>()), Times.Once);
+        // 初始化时一次统计，提交后一次统计 => 2 次
+        mockService1.Verify(s => s.GetAnswerStats(), Times.Exactly(2));
+        mockService1.Verify(s => s.GetTimeStats(), Times.AtLeastOnce);
         mockMessage.Verify(m => m.ShowMessageAsync("提示", "答案已提交！"), Times.Once);
     }
 
@@ -184,7 +186,7 @@ public class MainWindowViewModelTests
         var mockMessage = new Mock<IMessageService>();
         var questions = new List<Question> { new Question { Id = 1 } };
         mockService1.Setup(s => s.GetPageQuestions(1)).Returns((questions, 1));
-        mockService1.Setup(s => s.SaveAnswerAsync(1, "e")).ThrowsAsync(new ArgumentException("无效答案"));
+        mockService1.Setup(s => s.SaveAnswerAsync(1, "e", It.IsAny<int>())).ThrowsAsync(new ArgumentException("无效答案"));
         
         var vm = new MainWindowViewModel(mockService1.Object, mockMessage.Object);
         var loadPageMethod = typeof(MainWindowViewModel).GetMethod("LoadPage", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
@@ -213,7 +215,68 @@ public class MainWindowViewModelTests
 
         // Act & Assert（无异常即为通过）
         await vm.SubmitPageAnswersCommand.ExecuteAsync(null);
-        mockService1.Verify(s => s.SaveAnswerAsync(It.IsAny<int>(), It.IsAny<string>()), Times.Never);
+        mockService1.Verify(s => s.SaveAnswerAsync(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<int>()), Times.Never);
+    }
+
+    // 收藏命令
+    [Fact]
+    public void ToggleFavoriteCommand_ShouldInvokeService()
+    {
+        var mockService1 = new Mock<IService1>();
+        var vm = new MainWindowViewModel(mockService1.Object, Mock.Of<IMessageService>());
+
+        vm.ToggleFavoriteCommand.Execute(1);
+
+        mockService1.Verify(s => s.ToggleFavorite(1), Times.Once);
+    }
+
+    // 难度筛选命令
+    [Fact]
+    public void FilterByDifficultyCommand_ShouldInvokeServiceAndReload()
+    {
+        var mockService1 = new Mock<IService1>();
+        mockService1.Setup(s => s.FilterByDifficulty(Difficulty.Medium)).Returns(new List<Question>());
+        var vm = new MainWindowViewModel(mockService1.Object, Mock.Of<IMessageService>());
+
+        vm.FilterByDifficultyCommand.Execute(Difficulty.Medium);
+
+        mockService1.Verify(s => s.FilterByDifficulty(Difficulty.Medium), Times.AtLeastOnce);
+    }
+
+    // 模式切换命令
+    [Fact]
+    public async Task SwitchModeCommand_ShouldSetExamMode()
+    {
+        var mockService1 = new Mock<IService1>();
+        var mockMessage = new Mock<IMessageService>();
+        var vm = new MainWindowViewModel(mockService1.Object, mockMessage.Object);
+
+        await vm.SwitchModeCommand.ExecuteAsync(null);
+
+        mockService1.Verify(s => s.SetCurrentMode(It.IsAny<Mode>()), Times.AtLeastOnce);
+    }
+
+    // 计时逻辑：提交时应带耗时
+    [Fact]
+    public async Task SubmitPageAnswers_ShouldPassSpentSeconds()
+    {
+        var mockService1 = new Mock<IService1>();
+        var mockMessage = new Mock<IMessageService>();
+        var questions = new List<Question> { new Question { Id = 1 } };
+        mockService1.Setup(s => s.GetPageQuestions(1)).Returns((questions, 1));
+        mockService1.Setup(s => s.GetAnswerStats()).Returns((0.0, 0, 1));
+        mockService1.Setup(s => s.GetTimeStats()).Returns((0, 0));
+
+        var vm = new MainWindowViewModel(mockService1.Object, mockMessage.Object);
+        var loadPageMethod = typeof(MainWindowViewModel).GetMethod("LoadPage", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        loadPageMethod?.Invoke(vm, new object[] { 1 });
+
+        vm.OnAnswerSelected(1, "a");
+        await Task.Delay(50); // 模拟耗时
+
+        await vm.SubmitPageAnswersCommand.ExecuteAsync(null);
+
+        mockService1.Verify(s => s.SaveAnswerAsync(1, "a", It.Is<int>(v => v >= 0)), Times.Once);
     }
 
 

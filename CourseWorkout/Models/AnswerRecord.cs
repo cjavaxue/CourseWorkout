@@ -26,5 +26,15 @@ public class AnswerRecord
     /// 是否正确
     /// </summary>
     public bool IsCorrect { get; set; }
+
+    /// <summary>
+    /// 本题耗时（秒）
+    /// </summary>
+    public int SpentSeconds { get; set; }
+
+    /// <summary>
+    /// 答题模式
+    /// </summary>
+    public Mode Mode { get; set; }
 }
 

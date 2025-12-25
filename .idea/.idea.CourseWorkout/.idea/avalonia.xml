@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="CourseWorkout/App.axaml" value="CourseWorkout/CourseWorkout.csproj" />
         <entry key="CourseWorkout/Views/MainWindow.axaml" value="CourseWorkout/CourseWorkout.csproj" />
       </map>
     </option>

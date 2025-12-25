@@ -28,8 +28,9 @@ public interface IService1
     /// </summary>
     /// <param name="questionId">题目ID</param>
     /// <param name="userAnswer">用户答案（a-d）</param>
+    /// <param name="spentSeconds">本题耗时（秒）</param>
     /// <exception cref="ArgumentException">userAnswer 非 a-d 时抛出</exception>
-    Task SaveAnswerAsync(int questionId, string userAnswer);
+    Task SaveAnswerAsync(int questionId, string userAnswer, int spentSeconds);
 
     /// <summary>
     /// 获取答题统计，CurrentPageAccuracy 范围 0-100（百分比）
@@ -47,5 +48,55 @@ public interface IService1
     /// 清除所有错题标记
     /// </summary>
     void ClearWrongMarks();
+
+    /// <summary>
+    /// 切换收藏状态
+    /// </summary>
+    /// <param name="questionId">题目ID</param>
+    void ToggleFavorite(int questionId);
+
+    /// <summary>
+    /// 获取收藏题目列表
+    /// </summary>
+    /// <returns>收藏题目</returns>
+    List<Question> GetFavoriteQuestions();
+
+    /// <summary>
+    /// 设置题目难度
+    /// </summary>
+    /// <param name="questionId">题目ID</param>
+    /// <param name="difficulty">难度</param>
+    void SetDifficulty(int questionId, Difficulty difficulty);
+
+    /// <summary>
+    /// 按难度筛选题目
+    /// </summary>
+    /// <param name="difficulty">目标难度，null 表示全部</param>
+    /// <returns>符合筛选的题目</returns>
+    List<Question> FilterByDifficulty(Difficulty? difficulty);
+
+    /// <summary>
+    /// 按难度统计正确率（百分比）
+    /// </summary>
+    /// <returns>三种难度的正确率</returns>
+    (double Easy, double Medium, double Hard) GetDifficultyAccuracy();
+
+    /// <summary>
+    /// 设置当前模式
+    /// </summary>
+    /// <param name="mode">练习/考试</param>
+    void SetCurrentMode(Mode mode);
+
+    /// <summary>
+    /// 获取考试报告
+    /// </summary>
+    /// <returns>考试报告</returns>
+    ExamReport GetExamReport();
+
+    /// <summary>
+    /// 获取耗时统计
+    /// </summary>
+    /// <returns>当前页平均耗时、全局平均耗时（秒）</returns>
+    (double CurrentPageAvgSeconds, double GlobalAvgSeconds) GetTimeStats();
 }
 

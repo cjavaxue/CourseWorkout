@@ -1,11 +1,14 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:CourseWorkout.ViewModels"
+        xmlns:models="using:CourseWorkout.Models"
+        xmlns:conv="using:CourseWorkout.Views.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
         x:Class="CourseWorkout.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        x:Name="RootWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="选择题刷题应用"
         MinWidth="800"
@@ -15,12 +18,35 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid RowDefinitions="*,Auto">
+    <Window.Resources>
+        <conv:BooleanToStringConverter x:Key="BooleanToStringConverter"/>
+    </Window.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- 顶部筛选与模式 -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="10,10,10,0">
+            <Button Content="{Binding IsShowingFavorites, Converter={StaticResource BooleanToStringConverter}, ConverterParameter='查看收藏|全部题目'}"
+                    Command="{Binding ViewFavoritesCommand}"
+                    Background="#FFC107" Foreground="Black" Padding="12,6" />
+            <TextBlock Text="难度筛选：" VerticalAlignment="Center" Foreground="#E0E0E0"/>
+            <ComboBox Width="140" SelectionChanged="OnDifficultyFilterChanged">
+                <ComboBoxItem Content="全部" Tag="{x:Null}" />
+                <ComboBoxItem Content="简单" Tag="{x:Static models:Difficulty.Easy}" />
+                <ComboBoxItem Content="中等" Tag="{x:Static models:Difficulty.Medium}" />
+                <ComboBoxItem Content="困难" Tag="{x:Static models:Difficulty.Hard}" />
+            </ComboBox>
+            <Button Content="{Binding CurrentMode, StringFormat='模式：{0}'}"
+                    Command="{Binding SwitchModeCommand}"
+                    Background="#607D8B" Foreground="White" Padding="12,6"/>
+            <TextBlock Text="{Binding ExamRemainingSeconds, StringFormat='倒计时：{0}s'}"
+                       Foreground="#FF9800" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+
         <!-- 主体区域 -->
-        <ScrollViewer Grid.Row="0" Margin="10">
+        <ScrollViewer Grid.Row="1" Margin="10">
             <ItemsControl ItemsSource="{Binding CurrentPageQuestions}">
                 <ItemsControl.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="models:Question">
                         <Border BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}" 
                                 BorderThickness="1" 
                                 CornerRadius="4"
@@ -30,6 +56,23 @@
                                 <TextBlock Text="{Binding Id, StringFormat='第{0}题'}" 
                                            FontWeight="Bold"
                                            Margin="0,0,0,0"/>
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <Button Content="{Binding IsFavorite, Converter={StaticResource BooleanToStringConverter}, ConverterParameter='★|☆'}"
+                                            Command="{Binding DataContext.ToggleFavoriteCommand, ElementName=RootWindow}"
+                                            CommandParameter="{Binding Id}"
+                                            Background="Transparent" BorderThickness="0" Foreground="#FFD700" FontSize="16"/>
+                                    <!-- <TextBlock Text="{Binding Path=DataContext.QuestionSpentSeconds[Id], RelativeSource={RelativeSource AncestorType=Window}, StringFormat='耗时：{0}s'}" -->
+                                    <!--            Foreground="#B0BEC5"/> -->
+                                    <!-- 直接绑定当前Question的SpentSeconds属性（已在Question.cs中新增） -->
+                                    <TextBlock Text="{Binding SpentSeconds, StringFormat='耗时：{0}s'}"
+                                               Foreground="#B0BEC5"/>
+                                    <ComboBox Width="120" Tag="{Binding Id}" SelectionChanged="OnDifficultyChanged">
+                                        <ComboBoxItem Content="未标记" Tag="{x:Null}" />
+                                        <ComboBoxItem Content="简单" Tag="{x:Static models:Difficulty.Easy}" />
+                                        <ComboBoxItem Content="中等" Tag="{x:Static models:Difficulty.Medium}" />
+                                        <ComboBoxItem Content="困难" Tag="{x:Static models:Difficulty.Hard}" />
+                                    </ComboBox>
+                                </StackPanel>
                                 <!-- 题干 -->
                                 <TextBlock Text="{Binding Title}" 
                                            FontSize="14"
@@ -85,7 +128,7 @@
         </ScrollViewer>
 
         <!-- 底部区域 -->
-        <Border Grid.Row="1" 
+        <Border Grid.Row="2" 
                 Background="#333333" 
                 Padding="10">
             <Grid ColumnDefinitions="Auto,*,Auto">

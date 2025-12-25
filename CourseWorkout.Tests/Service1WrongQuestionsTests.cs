@@ -25,7 +25,7 @@ public class Service1WrongQuestionsTests
         await service1.InitializeAsync("test.txt");
 
         // Act
-        await service1.SaveAnswerAsync(1, "b"); // 错误答案（正确答案是 a）
+        await service1.SaveAnswerAsync(1, "b", 3); // 错误答案（正确答案是 a）
 
         // Assert
         var wrongQuestions = service1.GetWrongQuestions();
@@ -47,7 +47,7 @@ public class Service1WrongQuestionsTests
         await service1.InitializeAsync("test.txt");
 
         // Act
-        await service1.SaveAnswerAsync(1, "a"); // 正确答案
+        await service1.SaveAnswerAsync(1, "a", 2); // 正确答案
 
         // Assert
         var wrongQuestions = service1.GetWrongQuestions();
@@ -67,8 +67,8 @@ public class Service1WrongQuestionsTests
         await service1.InitializeAsync("test.txt");
 
         // 先标记一些错题
-        await service1.SaveAnswerAsync(1, "b");
-        await service1.SaveAnswerAsync(2, "b");
+        await service1.SaveAnswerAsync(1, "b", 1);
+        await service1.SaveAnswerAsync(2, "b", 1);
         Assert.Equal(2, service1.GetWrongQuestions().Count);
 
         // Act

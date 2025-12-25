@@ -16,6 +16,10 @@ public class Service1 : IService1
     private List<AnswerRecord> _answerRecords = new();
     private int _currentPage = 1;
     private const int PageSize = 10;
+    private Mode _currentMode = Mode.Practice;
+    private DateTime _examStartTime = DateTime.MinValue;
+    private const int ExamDurationSeconds = 1800; // 30分钟
+    private double _bestScore = 0;
 
     public Service1(IService2 service2)
     {
@@ -66,6 +70,8 @@ public class Service1 : IService1
 
         _allQuestions = uniqueQuestions;
         _answerRecords = new List<AnswerRecord>();
+        _currentMode = Mode.Practice;
+        _examStartTime = DateTime.MinValue;
     }
 
     /// <summary>
@@ -111,11 +117,15 @@ public class Service1 : IService1
     /// <summary>
     /// 保存用户答案，userAnswer 非 a-d 时抛 ArgumentException
     /// </summary>
-    public Task SaveAnswerAsync(int questionId, string userAnswer)
+    public Task SaveAnswerAsync(int questionId, string userAnswer, int spentSeconds)
     {
         if (string.IsNullOrEmpty(userAnswer) || !new[] { "a", "b", "c", "d" }.Contains(userAnswer.ToLower()))
         {
             throw new ArgumentException("用户答案必须是 a、b、c 或 d 之一");
+        }
+        if (spentSeconds < 0)
+        {
+            spentSeconds = 0;
         }
 
         userAnswer = userAnswer.ToLower();
@@ -134,6 +144,8 @@ public class Service1 : IService1
             existingRecord.UserAnswer = userAnswer;
             existingRecord.SubmitTime = DateTime.Now;
             existingRecord.IsCorrect = isCorrect;
+            existingRecord.SpentSeconds = spentSeconds;
+            existingRecord.Mode = _currentMode;
         }
         else
         {
@@ -142,7 +154,9 @@ public class Service1 : IService1
                 QuestionId = questionId,
                 UserAnswer = userAnswer,
                 SubmitTime = DateTime.Now,
-                IsCorrect = isCorrect
+                IsCorrect = isCorrect,
+                SpentSeconds = spentSeconds,
+                Mode = _currentMode
             });
         }
 
@@ -209,6 +223,121 @@ public class Service1 : IService1
         {
             question.IsMarkedAsWrong = false;
         }
+    }
+
+    /// <summary>
+    /// 切换收藏状态
+    /// </summary>
+    public void ToggleFavorite(int questionId)
+    {
+        var q = _allQuestions.FirstOrDefault(x => x.Id == questionId);
+        if (q == null)
+        {
+            throw new ArgumentException($"题目ID {questionId} 不存在");
+        }
+        q.IsFavorite = !q.IsFavorite;
+    }
+
+    /// <summary>
+    /// 获取收藏题目
+    /// </summary>
+    public List<Question> GetFavoriteQuestions()
+    {
+        return _allQuestions.Where(q => q.IsFavorite).ToList();
+    }
+
+    /// <summary>
+    /// 设置题目难度
+    /// </summary>
+    public void SetDifficulty(int questionId, Difficulty difficulty)
+    {
+        var q = _allQuestions.FirstOrDefault(x => x.Id == questionId);
+        if (q == null)
+        {
+            throw new ArgumentException($"题目ID {questionId} 不存在");
+        }
+        q.Difficulty = difficulty;
+    }
+
+    /// <summary>
+    /// 难度筛选
+    /// </summary>
+    public List<Question> FilterByDifficulty(Difficulty? difficulty)
+    {
+        if (difficulty == null)
+        {
+            return _allQuestions.ToList();
+        }
+        return _allQuestions.Where(q => q.Difficulty == difficulty).ToList();
+    }
+
+    /// <summary>
+    /// 难度正确率
+    /// </summary>
+    public (double Easy, double Medium, double Hard) GetDifficultyAccuracy()
+    {
+        double Calc(Difficulty target)
+        {
+            var ids = _allQuestions.Where(q => q.Difficulty == target).Select(q => q.Id).ToHashSet();
+            if (ids.Count == 0) return 0;
+            var recs = _answerRecords.Where(r => ids.Contains(r.QuestionId)).ToList();
+            if (recs.Count == 0) return 0;
+            var correct = recs.Count(r => r.IsCorrect);
+            return Math.Round(correct * 100.0 / recs.Count, 2);
+        }
+
+        return (Calc(Difficulty.Easy), Calc(Difficulty.Medium), Calc(Difficulty.Hard));
+    }
+
+    /// <summary>
+    /// 设置当前模式
+    /// </summary>
+    public void SetCurrentMode(Mode mode)
+    {
+        _currentMode = mode;
+        if (mode == Mode.Exam)
+        {
+            _examStartTime = DateTime.Now;
+        }
+    }
+
+    /// <summary>
+    /// 考试报告
+    /// </summary>
+    public ExamReport GetExamReport()
+    {
+        var examRecords = _answerRecords.Where(r => r.Mode == Mode.Exam).ToList();
+        var total = examRecords.Count;
+        var correct = examRecords.Count(r => r.IsCorrect);
+        var score = total > 0 ? Math.Round(correct * 100.0 / total, 2) : 0;
+        var spent = examRecords.Sum(r => r.SpentSeconds);
+        _bestScore = Math.Max(_bestScore, score);
+
+        return new ExamReport
+        {
+            Score = score,
+            SpentSeconds = spent,
+            BestScore = _bestScore
+        };
+    }
+
+    /// <summary>
+    /// 耗时统计
+    /// </summary>
+    public (double CurrentPageAvgSeconds, double GlobalAvgSeconds) GetTimeStats()
+    {
+        double Avg(IEnumerable<AnswerRecord> recs)
+        {
+            var list = recs.ToList();
+            if (list.Count == 0) return 0;
+            return Math.Round(list.Average(r => r.SpentSeconds), 2);
+        }
+
+        var (pageQuestions, _) = GetPageQuestions(_currentPage);
+        var pageIds = pageQuestions.Select(q => q.Id).ToHashSet();
+        var pageAvg = Avg(_answerRecords.Where(r => pageIds.Contains(r.QuestionId)));
+        var globalAvg = Avg(_answerRecords);
+        return (pageAvg, globalAvg);
     }
 }
 

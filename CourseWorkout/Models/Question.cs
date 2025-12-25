@@ -31,5 +31,17 @@ public class Question
     /// 是否标记为错题
     /// </summary>
     public bool IsMarkedAsWrong { get; set; }
+
+    /// <summary>
+    /// 是否收藏/重点标记
+    /// </summary>
+    public bool IsFavorite { get; set; }
+
+    /// <summary>
+    /// 难度（可选）
+    /// </summary>
+    public Difficulty? Difficulty { get; set; }
+    
+    public int SpentSeconds { get; set; } // 单题耗时
 }
 

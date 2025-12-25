@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -43,15 +44,49 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty]
     private bool _canGoNext = false;
 
+    [ObservableProperty]
+    private bool _isShowingFavorites = false;
+
+    [ObservableProperty]
+    private Difficulty? _currentDifficultyFilter = null;
+
+    [ObservableProperty]
+    private Mode _currentMode = Mode.Practice;
+
+    [ObservableProperty]
+    private int _examRemainingSeconds = 0;
+
+    [ObservableProperty]
+    private double _currentPageAvgSeconds = 0;
+
+    [ObservableProperty]
+    private double _globalAvgSeconds = 0;
+
+    /// <summary>
+    /// 单题耗时（最近一次提交）
+    /// </summary>
+    //public Dictionary<int, int> QuestionSpentSeconds { get; private set; } = new();
+    // 改为公共setter并支持属性变更通知
+    private Dictionary<int, int> _questionSpentSeconds = new();
+    public Dictionary<int, int> QuestionSpentSeconds 
+    { 
+        get => _questionSpentSeconds; 
+        set => SetProperty(ref _questionSpentSeconds, value); 
+    }
+
     /// <summary>
     /// 用户选择的答案字典，Key=题号，Value=用户选的 a-d
     /// </summary>
     public Dictionary<int, string> UserSelectedAnswers { get; } = new();
 
+    private readonly Dictionary<int, DateTime> _questionStartTimes = new();
+    private CancellationTokenSource? _examCts;
+
     public MainWindowViewModel(IService1 service1, IMessageService messageService)
     {
         _service1 = service1;
         _messageService = messageService;
+        _service1.SetCurrentMode(CurrentMode);
         InitializeAsync();
     }
 
@@ -79,23 +114,42 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            var (pageQuestions, totalPages) = _service1.GetPageQuestions(page);
-            CurrentPage = page;
+            List<Question> pageQuestions;
+            int totalPages;
+
+            if (IsShowingFavorites)
+            {
+                pageQuestions = _service1.GetFavoriteQuestions();
+                totalPages = 1;
+                CurrentPage = 1;
+            }
+            else if (CurrentDifficultyFilter != null)
+            {
+                pageQuestions = _service1.FilterByDifficulty(CurrentDifficultyFilter);
+                totalPages = 1;
+                CurrentPage = 1;
+            }
+            else
+            {
+                var result = _service1.GetPageQuestions(page);
+                pageQuestions = result.PageQuestions;
+                totalPages = result.TotalPages;
+                CurrentPage = page;
+            }
+
             TotalPages = totalPages;
 
             CurrentPageQuestions.Clear();
+            _questionStartTimes.Clear();
             foreach (var question in pageQuestions)
             {
                 CurrentPageQuestions.Add(question);
-                // 恢复用户已选择的答案
-                if (UserSelectedAnswers.ContainsKey(question.Id))
-                {
-                    // 答案已保存在字典中，UI 会通过绑定获取
-                }
+                _questionStartTimes[question.Id] = DateTime.Now;
             }
 
             UpdateButtonStates();
             UpdateStats();
+            UpdateTimeStats();
         }
         catch (Exception ex)
         {
@@ -123,6 +177,16 @@ public partial class MainWindowViewModel : ViewModelBase
         CurrentPageAccuracy = accuracy;
         GlobalAnsweredCount = answeredCount;
         TotalQuestionCount = totalCount;
+    }
+
+    /// <summary>
+    /// 更新耗时统计
+    /// </summary>
+    private void UpdateTimeStats()
+    {
+        var (pageAvg, globalAvg) = _service1.GetTimeStats();
+        CurrentPageAvgSeconds = pageAvg;
+        GlobalAvgSeconds = globalAvg;
     }
 
     /// <summary>
@@ -162,11 +226,18 @@ public partial class MainWindowViewModel : ViewModelBase
                 if (UserSelectedAnswers.ContainsKey(question.Id))
                 {
                     var userAnswer = UserSelectedAnswers[question.Id];
-                    await _service1.SaveAnswerAsync(question.Id, userAnswer);
+                    var spent = 0;
+                    if (_questionStartTimes.TryGetValue(question.Id, out var start))
+                    {
+                        spent = (int)Math.Max(0, (DateTime.Now - start).TotalSeconds);
+                    }
+                    QuestionSpentSeconds[question.Id] = spent;
+                    await _service1.SaveAnswerAsync(question.Id, userAnswer, spent);
                 }
             }
 
             UpdateStats();
+            UpdateTimeStats();
             await _messageService.ShowMessageAsync("提示", "答案已提交！");
         }
         catch (ArgumentException ex)
@@ -236,5 +307,108 @@ public partial class MainWindowViewModel : ViewModelBase
     public void OnAnswerSelected(int questionId, string answer)
     {
         UserSelectedAnswers[questionId] = answer;
+    }
+
+    /// <summary>
+    /// 切换收藏
+    /// </summary>
+    [RelayCommand]
+    private void ToggleFavorite(int questionId)
+    {
+        try
+        {
+            _service1.ToggleFavorite(questionId);
+            if (IsShowingFavorites)
+            {
+                LoadPage(1);
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = _messageService.ShowMessageAsync("错误", ex.Message);
+        }
+    }
+
+    /// <summary>
+    /// 查看/退出收藏列表
+    /// </summary>
+    [RelayCommand]
+    private void ViewFavorites()
+    {
+        IsShowingFavorites = !IsShowingFavorites;
+        LoadPage(1);
+    }
+
+    /// <summary>
+    /// 设置难度
+    /// </summary>
+    [RelayCommand]
+    private void SetDifficulty((int QuestionId, Difficulty Difficulty) param)
+    {
+        try
+        {
+            _service1.SetDifficulty(param.QuestionId, param.Difficulty);
+        }
+        catch (Exception ex)
+        {
+            _ = _messageService.ShowMessageAsync("错误", ex.Message);
+        }
+    }
+
+    /// <summary>
+    /// 按难度筛选
+    /// </summary>
+    [RelayCommand]
+    private void FilterByDifficulty(Difficulty? difficulty)
+    {
+        CurrentDifficultyFilter = difficulty;
+        LoadPage(1);
+    }
+
+    /// <summary>
+    /// 模式切换
+    /// </summary>
+    [RelayCommand]
+    private async Task SwitchMode()
+    {
+        CurrentMode = CurrentMode == Mode.Practice ? Mode.Exam : Mode.Practice;
+        _service1.SetCurrentMode(CurrentMode);
+
+        _examCts?.Cancel();
+        if (CurrentMode == Mode.Exam)
+        {
+            ExamRemainingSeconds = 1800;
+            _examCts = new CancellationTokenSource();
+            _ = RunExamCountdownAsync(_examCts.Token);
+            await _messageService.ShowMessageAsync("提示", "已切换到考试模式，倒计时 30 分钟。");
+        }
+        else
+        {
+            ExamRemainingSeconds = 0;
+            await _messageService.ShowMessageAsync("提示", "已切换到练习模式。");
+        }
+    }
+
+    private async Task RunExamCountdownAsync(CancellationToken token)
+    {
+        try
+        {
+            while (!token.IsCancellationRequested && ExamRemainingSeconds > 0)
+            {
+                await Task.Delay(1000, token);
+                ExamRemainingSeconds--;
+            }
+
+            if (!token.IsCancellationRequested && ExamRemainingSeconds <= 0)
+            {
+                await SubmitPageAnswers();
+                var report = _service1.GetExamReport();
+                await _messageService.ShowMessageAsync("考试结束", $"得分：{report.Score}，用时：{report.SpentSeconds}秒，最高分：{report.BestScore}");
+            }
+        }
+        catch (TaskCanceledException)
+        {
+            // ignore
+        }
     }
 }

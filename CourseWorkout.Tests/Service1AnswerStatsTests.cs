@@ -30,11 +30,11 @@ public class Service1AnswerStatsTests
         // 提交10道题的答案，8道正确，2道错误
         for (int i = 1; i <= 8; i++)
         {
-            await service1.SaveAnswerAsync(i, "a"); // 正确答案
+            await service1.SaveAnswerAsync(i, "a", 5); // 正确答案
         }
         for (int i = 9; i <= 10; i++)
         {
-            await service1.SaveAnswerAsync(i, "b"); // 错误答案
+            await service1.SaveAnswerAsync(i, "b", 5); // 错误答案
         }
 
         // Act

@@ -4,6 +4,7 @@ b. closing
 c. monitoring and controlling
 d. planning
 ANSWER: c
+DIFFICULTY: medium
 
 2. Administrative activities, such as archiving project files, closing out contracts, documenting lessons learned, and receiving formal acceptance of the delivered work as part of the phase or project, are often involved in which processes?
 a. monitoring and controlling
@@ -11,6 +12,7 @@ b. executing
 c. initiating
 d. closing
 ANSWER: d
+DIFFICULTY: Easy
 
 3. The organization recognizes that a new project exists and completes a project charter during which processes for a new project?
 a. initiating
@@ -18,6 +20,7 @@ b. planning
 c. opening
 d. controlling
 ANSWER: a
+DIFFICULTY: Easy
 
 4. What process group does the project integration management knowledge area map to through the activities of developing project charters?
 a. initiating
@@ -25,6 +28,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: a
+DIFFICULTY: medium
 
 5. The project scope management knowledge area maps to which process group through the activities of scope validation and scope control?
 a. initiating
@@ -32,6 +36,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: d
+DIFFICULTY: medium
 
 6. The project schedule management knowledge area maps to which process group through the activity of schedule control?
 a. initiating
@@ -39,6 +44,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: d
+DIFFICULTY: Hard
 
 7. What is developed in the Project Integration Management knowledge area?
 a. schedule management plan
@@ -46,6 +52,7 @@ b. project management plan
 c. WBS
 d. quality management
 ANSWER: b
+DIFFICULTY: Hard
 
 8. The project cost management knowledge area maps to which process group through the activities of estimating costs and budget determination?
 a. initiating
@@ -53,6 +60,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: b
+DIFFICULTY: medium
 
 9. Which planning process is within the Project Scope Management knowledge area?
 a. Schedule development
@@ -60,6 +68,7 @@ b. Developing a project management plan
 c. Creation of a WBS
 d. Quality planning
 ANSWER: c
+DIFFICULTY: Hard
 
 10. The project stakeholder management knowledge area maps to which process group by identifying stakeholders?
 a. initiating
@@ -67,6 +76,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: a
+DIFFICULTY: Easy
 
 11. Which is an example of a pre-initiation task?
 a. Drawing up a work breakdown structure
@@ -74,6 +84,7 @@ b. Developing a business case for a project
 c. Drafting the project charter
 d. Identifying stakeholders
 ANSWER: b
+DIFFICULTY: medium
 
 12. What is one of the main outputs of the initiation process?
 a. creating the work breakdown structure
@@ -81,6 +92,7 @@ b. selecting the project manager
 c. developing the project charter
 d. identifying the project sponsor
 ANSWER: c
+DIFFICULTY: medium
 
 13. What is the main purpose of project plans?
 a. schedule management plans
@@ -88,6 +100,7 @@ b. define project scope
 c. estimate activity resources
 d. guide project execution
 ANSWER: d
+DIFFICULTY: medium
 
 14. The project management plan is the output of which project planning process?
 a. integration management
@@ -95,6 +108,7 @@ b. quality management
 c. scope management
 d. procurement management
 ANSWER: a
+DIFFICULTY: Hard
 
 15. What is often the most difficult and unappreciated process in project management?
 a. initiating
@@ -102,6 +116,7 @@ b. planning
 c. executing
 d. monitoring and controlling
 ANSWER: b
+DIFFICULTY: medium
 
 16. Which planning process is associated with project scope management?
 a. Collecting requirements
@@ -109,6 +124,7 @@ b. Performing qualitative risk analysis
 c. Planning schedule management
 d. Estimating costs
 ANSWER: a
+DIFFICULTY: medium
 
 17. What tool provides a basis for creating the project schedule and performing earned value management for measuring and forecasting project performance?
 a. scope statement
@@ -116,6 +132,7 @@ b. cost management plan
 c. work breakdown structure
 d. project charter
 ANSWER: c
+DIFFICULTY: Easy
 
 18. Which are outputs of the executing process of project integration management?
 a. Deliverables
@@ -123,6 +140,7 @@ b. Issue logs
 c. Resource calendars
 d. Enterprise environmental factor updates
 ANSWER: a
+DIFFICULTY: medium
 
 19. What process provides enterprise environmental factors as an output?
 a. project integration management
@@ -130,6 +148,7 @@ b. project quality management
 c. project human resource management
 d. project procurement management
 ANSWER: c
+DIFFICULTY: Easy
 
 20. Which process includes measuring progress toward project objectives and taking corrective action to match progress with the plan?
 a. Planning
@@ -137,6 +156,7 @@ b. Monitoring and controlling
 c. Executing
 d. Initiating
 ANSWER: b
+DIFFICULTY: medium
 
 21. Which process involves gaining stakeholder and customer acceptance of the final products and services and bringing the project, or project phase, to an orderly end?
 a. executing
@@ -144,6 +164,7 @@ b. closing
 c. planning
 d. monitoring
 ANSWER: b
+DIFFICULTY: Hard
 
 22. An organizational process assets update is the output of which closing process?
 a. project integration management
@@ -151,6 +172,7 @@ b. project quality management
 c. project procurement management
 d. project time management
 ANSWER: a
+DIFFICULTY: Easy
 
 23. In the Scrum method, during which meeting is the improvement of the product and process discussed?
 a. sprint retrospective
@@ -158,6 +180,7 @@ b. sprint review
 c. kick-off
 d. daily Scrum
 ANSWER: a
+DIFFICULTY: Hard
 
 24. Which action involves defining and documenting the features and functions of the products produced during the project as well as the processes used for creating them?
 a. Collecting requirements
@@ -165,6 +188,7 @@ b. Defining scope
 c. Controlling scope
 d. Validating scope
 ANSWER: a
+DIFFICULTY: Easy
 
 25. Which action involves reviewing the project charter, requirements documents, and organizational process assets to create a scope statement, adding more information as requirements are developed and change requests are approved?
 a. Creating scope
@@ -172,6 +196,7 @@ b. Defining scope
 c. Controlling scope
 d. Validating scope
 ANSWER: b
+DIFFICULTY: Hard
 
 26. Which action involves normalizing acceptance of the project deliverables and during this phase the key project stakeholders, such as the customer and sponsor for the project, inspect and then formally accept the deliverables?
 a. Creating scope
@@ -179,6 +204,7 @@ b. Defining scope
 c. Controlling scope
 d. Validating scope
 ANSWER: d
+DIFFICULTY: Hard
 
 27. Creating the WBS is a subprocess associated with which process in project scope management?
 a. planning
@@ -186,6 +212,7 @@ b. monitoring and controlling
 c. closing
 d. executing
 ANSWER: a
+DIFFICULTY: Easy
 
 28. Which output documents how project needs will be analyzed, documented, and managed?
 a. requirements traceability matrix
@@ -193,6 +220,7 @@ b. requirements management plan
 c. WBS
 d. project scope statement
 ANSWER: b
+DIFFICULTY: medium
 
 29. Which process involves generating ideas by comparing specific project practices or product characteristics to those of other projects or products inside or outside the performing organization?
 a. variance
@@ -200,6 +228,7 @@ b. benchmarking
 c. prototyping
 d. decomposition
 ANSWER: b
+DIFFICULTY: Easy
 
 30. What is a table that lists requirements, their various attributes, and the status of the requirements to ensure that all are addressed referred to as?
 a. requirements traceability matrix
@@ -207,6 +236,7 @@ b. Gantt chart
 c. state transition table
 d. entity-attribute-value model
 ANSWER: a
+DIFFICULTY: medium
 
 31. Which document contains a deliverable-oriented grouping of the work involved in a project that defines the total scope of the project?
 a. project charter
@@ -214,6 +244,7 @@ b. business case
 c. project scope statement
 d. work breakdown structure
 ANSWER: d
+DIFFICULTY: Hard
 
 32. What is the main technique used in creating a WBS, which involves subdividing project deliverables into smaller pieces?
 a. conglomeration
@@ -221,6 +252,7 @@ b. accumulation
 c. decomposition
 d. catalyzation
 ANSWER: c
+DIFFICULTY: medium
 
 33. Which task is at the lowest level of the WBS?
 a. variance
@@ -228,6 +260,7 @@ b. objective
 c. deliverable
 d. work package
 ANSWER: d
+DIFFICULTY: Hard
 
 34. Which document should list and describe all of the deliverables required for the project?
 a. project charter
@@ -235,6 +268,7 @@ b. scope statement
 c. WBS
 d. Gantt chart
 ANSWER: b
+DIFFICULTY: Hard
 
 35. Which approach for constructing a WBS uses a similar project’s WBS as a starting point?
 a. top-down
@@ -242,6 +276,7 @@ b. bottom-up
 c. mind-mapping
 d. analogy
 ANSWER: d
+DIFFICULTY: medium
 
 36. Which approach for constructing a WBS involves refining the work into greater and greater levels of detail?
 a. analogy
@@ -249,6 +284,7 @@ b. bottom-up
 c. top-down
 d. mind mapping
 ANSWER: c
+DIFFICULTY: Easy
 
 37. Which approach for constructing a WBS starts with the largest items of the project and breaks them into subordinate items?
 a. analogy
@@ -256,6 +292,7 @@ b. bottom-up
 c. top-down
 d. mind mapping
 ANSWER: c
+DIFFICULTY: Easy
 
 38. Which technique is used for creating a WBS uses branches radiating from a core idea to structure thoughts and ideas instead of writing down tasks in a list or immediately trying to create a structure for tasks?
 a. analogy
@@ -263,6 +300,7 @@ b. bottom-up
 c. top-down
 d. mind mapping
 ANSWER: d
+DIFFICULTY: medium
 
 39. During which approach do team members first identify as many specific tasks related to the project as possible and then aggregate the specific tasks and organize them into summary activities, or higher levels in the WBS?
 a. analogy
@@ -270,6 +308,7 @@ b. bottom-up
 c. top-down
 d. mind mapping
 ANSWER: b
+DIFFICULTY: Easy
 
 40. Mind mapping can be used for developing WBSs using which approach?
 a. analogy approach only
@@ -277,6 +316,7 @@ b. bottom-up or analogy approach
 c. top-down or bottom-up approach
 d. any approach
 ANSWER: c
+DIFFICULTY: medium
 
 41. What process involves formal acceptance of the completed project scope by the stakeholders?
 a. Scope validation
@@ -284,6 +324,7 @@ b. Scope planning
 c. Scope control
 d. Scope baseline
 ANSWER: a
+DIFFICULTY: Easy
 
 42. Which process involves developing a working replica of the system or some aspect of the system?
 a. Prototyping
@@ -291,6 +332,7 @@ b. Variance
 c. Decomposition
 d. Use case modeling
 ANSWER: a
+DIFFICULTY: medium
 
 43. Which process involves identifying and modeling business events, who initiated them, and how the system should respond to them?
 a. Prototyping
@@ -298,6 +340,7 @@ b. JAD
 c. RAD
 d. Use case modeling
 ANSWER: d
+DIFFICULTY: Easy
 
 44. What is the first process involved in project schedule management?
 a. defining activities
@@ -305,6 +348,7 @@ b. estimating activity durations
 c. planning schedule management
 d. sequencing activities
 ANSWER: c
+DIFFICULTY: medium
 
 45. Which process in project schedule management involves identifying the specific tasks that the project team members and stakeholders must perform to produce the project deliverables?
 a. defining activities
@@ -312,6 +356,7 @@ b. sequencing activities
 c. developing the schedule
 d. estimating activity durations
 ANSWER: a
+DIFFICULTY: Hard
 
 46. In project schedule management, which process generates the main outputs of an activity list, activity attributes, and a milestone list?
 a. sequencing activities
@@ -319,6 +364,7 @@ b. defining activities
 c. resource estimating activities
 d. estimating activity durations
 ANSWER: b
+DIFFICULTY: medium
 
 47. In project schedule management, which process primarily involve identifying and documenting the relationships between project activities?
 a. defining activities
@@ -326,6 +372,7 @@ b. sequencing activities
 c. planning schedule management
 d. estimating activity durations
 ANSWER: b
+DIFFICULTY: medium
 
 48. In project schedule management, which process involves estimating the number of work periods that are needed to complete individual activities?
 a. defining activities
@@ -333,6 +380,7 @@ b. sequencing activities
 c. planning schedule management
 d. estimating activity durations
 ANSWER: d
+DIFFICULTY: Hard
 
 49. In project schedule management, which process involves analyzing activity sequences, activity resource estimates, and activity duration estimates to create the project schedule?
 a. planning schedule management
@@ -340,6 +388,7 @@ b. developing the schedule
 c. controlling the schedule
 d. defining activities
 ANSWER: b
+DIFFICULTY: Hard
 
 50. In project schedule management, which process primarily involves checking and managing changes to the project schedule?
 a. estimating activity durations
@@ -347,6 +396,7 @@ b. developing the schedule
 c. controlling the schedule
 d. estimating activity resources
 ANSWER: c
+DIFFICULTY: medium
 
 51. In project schedule management, which is an output of controlling the schedule?
 a. activity duration estimate
@@ -354,6 +404,7 @@ b. project management plan update
 c. activity attribute
 d. milestones list
 ANSWER: b
+DIFFICULTY: Hard
 
 52. Which document is most likely to include planned project start and end dates which serve as the starting points for a detailed schedule?
 a. resource breakdown structure
@@ -361,6 +412,7 @@ b. milestones list
 c. organizational process assets update
 d. project charter
 ANSWER: d
+DIFFICULTY: Easy
 
 53. Which term is used for a significant event on a project that normally has no duration?
 a. milestone
@@ -368,6 +420,7 @@ b. activity attribute
 c. activity sequence
 d. schedule baseline
 ANSWER: a
+DIFFICULTY: medium
 
 54. In project schedule management, the main goal of which process is to ensure that the project team has complete understanding of all the work they must do as part of the project scope so they can start scheduling the work?
 a. defining activities
@@ -375,6 +428,7 @@ b. estimating activity durations
 c. estimating activity resources
 d. controlling the schedule
 ANSWER: a
+DIFFICULTY: medium
 
 55. In project schedule management, what is the next step after defining project activities?
 a. planning schedule management
@@ -382,6 +436,7 @@ b. determining their dependencies
 c. controlling the schedule
 d. estimating activity duration
 ANSWER: b
+DIFFICULTY: Hard
 
 56. Which type of dependencies are inherent in the nature of work being performed on a project?
 a. mandatory
@@ -389,6 +444,7 @@ b. discretionary
 c. external
 d. random
 ANSWER: a
+DIFFICULTY: medium
 
 57. Which dependencies are sometimes referred to as soft logic and should be used with care because they may limit later scheduling options?
 a. mandatory
@@ -396,6 +452,7 @@ b. discretionary
 c. external
 d. inherent
 ANSWER: b
+DIFFICULTY: Easy
 
 58. Which dependencies involve relationships between project and non-project activities?
 a. mandatory
@@ -403,6 +460,7 @@ b. discretionary
 c. external
 d. inherent
 ANSWER: c
+DIFFICULTY: medium
 
 59. In an AOA network diagram, what occurs when two or more activities follow a single node?
 a. combinations
@@ -410,6 +468,7 @@ b. buffers
 c. mergers
 d. bursts
 ANSWER: d
+DIFFICULTY: Easy
 
 60. Which network diagramming technique uses boxes to represent activities?
 a. PDM
@@ -417,6 +476,7 @@ b. CPM
 c. ADM
 d. PERT
 ANSWER: a
+DIFFICULTY: medium
 
 61. Which dependencies do AOA network diagrams use?
 a. start-to-start
@@ -424,6 +484,7 @@ b. finish-to-start
 c. finish-to-finish
 d. start-to-finish
 ANSWER: b
+DIFFICULTY: Hard
 
 62. During which relationship is the “from” activity unable start until the “to” activity is started?
 a. start-to-start
@@ -431,6 +492,7 @@ b. finish-to-finish
 c. finish-to-start
 d. start-to-finish
 ANSWER: a
+DIFFICULTY: medium
 
 63. Which is true of dummy activities?
 a. They have long durations.
@@ -438,6 +500,7 @@ b. They show logical relationships between activities.
 c. They have a large range of resources.
 d. They have limited time periods.
 ANSWER: a
+DIFFICULTY: Hard
 
 64. Which is one of the main outputs of estimating activity resources process?
 a. project documents update
@@ -445,6 +508,7 @@ b. milestone list
 c. breakdown structure
 d. activity duration estimate
 ANSWER: a
+DIFFICULTY: Hard
 
 65. After working with key stakeholders to define activities and calculate their resources, what is the next process in project schedule management?
 a. develop the schedule.
@@ -452,6 +516,7 @@ b. control the schedule.
 c. determine their dependencies.
 d. estimate the duration of activities.
 ANSWER: d
+DIFFICULTY: Easy
 
 66. In project schedule management, the ultimate goal of which process is to provide a basis for monitoring project progress for the time dimension of the project?
 a. defining activities
@@ -459,6 +524,7 @@ b. sequencing activities
 c. developing a schedule
 d. estimating activity resources
 ANSWER: c
+DIFFICULTY: medium
 
 67. Which provide a standard format for displaying project schedule information by listing project activities and their corresponding start and finish dates in a calendar format?
 a. Gantt charts
@@ -466,6 +532,7 @@ b. Critical path analysis
 c. Arrow diagramming method
 d. PERT analysis
 ANSWER: a
+DIFFICULTY: Easy
 
 68. Which technique involves network diagramming and is used primarily to predict total project duration?
 a. Gantt chart
@@ -473,6 +540,7 @@ b. critical path analysis
 c. resource breakdown structure
 d. arrow diagramming method
 ANSWER: b
+DIFFICULTY: Hard
 
 69. What term is used for the amount of time an activity can be delayed without delaying the early start date of any immediately following activities?
 a. forward pass
@@ -480,6 +548,7 @@ b. backward pass
 c. fast tracking
 d. free slack
 ANSWER: d
+DIFFICULTY: Easy
 
 70. What term is used for the amount of time an activity can be delayed from its early start without delaying the planned project finish date?
 a. total slack
@@ -487,6 +556,7 @@ b. free float
 c. backward pass
 d. forward pass
 ANSWER: a
+DIFFICULTY: Hard
 
 71. What is the latest possible time an activity might begin without delaying the project finish date?
 a. early finish date
@@ -494,6 +564,7 @@ b. late finish date
 c. late start date
 d. early start date
 ANSWER: c
+DIFFICULTY: medium
 
 72. Which technique involves doing activities in parallel that one would normally do in sequence?
 a. Critical chain scheduling
@@ -501,6 +572,7 @@ b. Crashing
 c. Fast tracking
 d. PERT analysis
 ANSWER: c
+DIFFICULTY: Easy
 
 73. Which technique is used for making cost and schedule trade-offs to obtain the greatest amount of schedule compression for the least incremental cost?
 a. dependency
@@ -508,6 +580,7 @@ b. crashing
 c. critical chain scheduling
 d. feeding buffers
 ANSWER: b
+DIFFICULTY: Hard
 
 74. How does critical chain scheduling protect tasks on the critical chain from being delayed?
 a. critical paths
@@ -515,6 +588,7 @@ b. feeding buffers
 c. dummy activities
 d. fast tracking
 ANSWER: b
+DIFFICULTY: medium
 
 75. Which law states that work expands to fill the time allowed?
 a. Murphy’s Law
@@ -522,6 +596,7 @@ b. Miller’s Law
 c. Parkinson’s Law
 d. Einstein’s Law
 ANSWER: c
+DIFFICULTY: Easy
 
 76. Which is an output of schedule control?
 a. change requests
@@ -529,6 +604,7 @@ b. activity attributes
 c. resource requirements
 d. milestones lists
 ANSWER: a
+DIFFICULTY: medium
 
 77. Where would a draft schedule for a project most likely be found?
 a. project buffer
@@ -536,6 +612,7 @@ b. project charter
 c. resource breakdown structure
 d. project’s dummy activities list
 ANSWER: b
+DIFFICULTY: Hard
 
 78. The main outputs of which process are team performance assessments, change requests, and updates to several documents?
 a. managing the project team
@@ -543,6 +620,7 @@ b. acquiring the project team
 c. developing the project team
 d. human resource planning
 ANSWER: c
+DIFFICULTY: Hard
 
 79. Which process involves tracking team member performance, motivating team members, providing timely feedback, resolving issues and conflicts, and coordinating changes to help enhance project performance?
 a. developing the human resource plan
@@ -550,6 +628,7 @@ b. developing the project team
 c. acquiring the project team
 d. managing the project team
 ANSWER: d
+DIFFICULTY: Easy
 
 80. Which highly respected psychologist, rejected the dehumanizing negativism of psychology and proposed the hierarchy of needs theory?
 a. Sigmund Freud
@@ -557,6 +636,7 @@ b. Abraham Maslow
 c. Carl Jung
 d. Philip Zimbardo
 ANSWER: b
+DIFFICULTY: Easy
 
 81. What need is at the highest level in Maslow’s structure?
 a. deficiency
@@ -564,6 +644,7 @@ b. growth
 c. safety
 d. physiological
 ANSWER: b
+DIFFICULTY: medium
 
 82. What are the bottom four needs in Maslow’s structure are referred to as?
 a. self-actualization
@@ -571,6 +652,7 @@ b. deficiency
 c. safety
 d. growth
 ANSWER: b
+DIFFICULTY: Easy
 
 83. What needs are at the bottom of Maslow’s structure?
 a. esteem
@@ -578,6 +660,7 @@ b. self-actualization
 c. physiological
 d. social
 ANSWER: c
+DIFFICULTY: Easy
 
 84. What is at the top of Maslow’s hierarchy of needs?
 a. esteem
@@ -585,6 +668,7 @@ b. self-actualization
 c. physiological
 d. social
 ANSWER: b
+DIFFICULTY: Easy
 
 85. Recognizing an employee as the “Star Performer of the Month” would be satisfying which need in Maslow’s hierarchy?
 a. esteem
@@ -592,6 +676,7 @@ b. self-actualization
 c. physiological
 d. safety
 ANSWER: a
+DIFFICULTY: medium
 
 86. Who is best known for distinguishing between motivational factors and hygiene factors when considering motivation in work settings?
 a. Frederick Herzberg
@@ -599,6 +684,7 @@ b. David McClelland
 c. Abraham Maslow
 d. Douglas McGregor
 ANSWER: a
+DIFFICULTY: Easy
 
 87. According to Herzberg, which is a motivational factor?
 a. recognition
@@ -606,6 +692,7 @@ b. salary
 c. training
 d. health benefits
 ANSWER: a
+DIFFICULTY: medium
 
 88. What do people who seek to excel and tend to avoid both low-risk and high-risk situations to improve their chances for achieving something worthwhile have a high need for?
 a. affiliation
@@ -613,6 +700,7 @@ b. security
 c. power
 d. achievement
 ANSWER: d
+DIFFICULTY: medium
 
 89. According to McClelland’s acquired-needs theory, what do people who desire harmonious relationships with other people and need to feel accepted by others have a high need for?
 a. affiliation
@@ -620,6 +708,7 @@ b. self-actualization
 c. power
 d. achievement
 ANSWER: a
+DIFFICULTY: medium
 
 90. According to McClelland’s acquired-needs theory, what do people who want to direct others, and can be seen as bossy, have a need for?
 a. affiliation
@@ -627,6 +716,7 @@ b. advancement
 c. power
 d. achievement
 ANSWER: c
+DIFFICULTY: Hard
 
 91. Which test presents subjects with a series of ambiguous pictures and asks them to develop a spontaneous story for each picture, assuming they will project their own needs into the story?
 a. RAM
@@ -634,6 +724,7 @@ b. MBTI
 c. TAT
 d. RACI
 ANSWER: c
+DIFFICULTY: Hard
 
 92. Who is best known for developing Theory X and Theory Y?
 a. Frederick Herzberg
@@ -641,6 +732,7 @@ b. David McClelland
 c. Abraham Maslow
 d. Douglas McGregor
 ANSWER: d
+DIFFICULTY: Hard
 
 93. Managers who follow which theory assume that the average worker wants to be directed and prefers to avoid responsibility?
 a. Theory Z
@@ -648,6 +740,7 @@ b. Theory X
 c. Theory Y
 d. Theory K
 ANSWER: b
+DIFFICULTY: medium
 
 94. What theory emphasizes factors such as job rotation, broadening of skills, generalization versus specialization, and the need for continuous training of workers?
 a. Theory W
@@ -655,6 +748,7 @@ b. Theory X
 c. Theory Y
 d. Theory Z
 ANSWER: d
+DIFFICULTY: Hard
 
 95. According to Thamhain and Wilemon, what is the legitimate hierarchical right to issue orders?
 a. authority
@@ -662,6 +756,7 @@ b. achievement
 c. expertise
 d. self-actualization
 ANSWER: a
+DIFFICULTY: medium
 
 96. According to Thamhain and Wilemon, what is the ability to improve a worker’s position?
 a. penalty
@@ -669,6 +764,7 @@ b. assignment
 c. expertise
 d. promotion
 ANSWER: d
+DIFFICULTY: medium
 
 97. Which type of power involves using punishment, threats, or other negative approaches to get people to do things they do not want to do?
 a. legitimate
@@ -676,6 +772,7 @@ b. coercive
 c. reward
 d. referent
 ANSWER: b
+DIFFICULTY: Easy
 
 98. Which type of power involves using incentives to induce people to do things?
 a. legitimate
@@ -683,6 +780,7 @@ b. coercive
 c. reward
 d. referent
 ANSWER: c
+DIFFICULTY: Easy
 
 99. Which type of power is based on an individual’s personal charisma?
 a. legitimate
@@ -690,6 +788,7 @@ b. coercive
 c. reward
 d. referent
 ANSWER: d
+DIFFICULTY: Easy
 
 100. What term is used for taking time to renew oneself physically, spiritually, mentally and socially?
 a. empathic mirroring
@@ -697,3 +796,4 @@ b. sharpening the saw
 c. synergizing
 d. thinking win/win
 ANSWER: b
+DIFFICULTY: Easy

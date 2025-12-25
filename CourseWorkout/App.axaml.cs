@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
@@ -13,7 +14,10 @@ namespace CourseWorkout;
 
 public partial class App : Application
 {
-    private ServiceProvider? _serviceProvider;
+    // 新增：全局静态属性，供MainWindow无参构造获取服务容器
+    public static IServiceProvider? ServiceProvider { get; private set; }
+    
+    //private ServiceProvider? _serviceProvider;
 
     public override void Initialize()
     {
@@ -37,7 +41,12 @@ public partial class App : Application
         // 注册 ViewModel：为 transient
         services.AddTransient<MainWindowViewModel>();
         
-        _serviceProvider = services.BuildServiceProvider();
+        // 新增：注册MainWindow到DI容器（让容器自动注入ViewModel）
+        services.AddTransient<MainWindow>();
+        
+        // 构建服务容器并赋值给全局静态属性
+        ServiceProvider = services.BuildServiceProvider();
+        //_serviceProvider = services.BuildServiceProvider();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
@@ -45,12 +54,15 @@ public partial class App : Application
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
             
-            // 从 DI 容器获取 ViewModel
-            var viewModel = _serviceProvider.GetRequiredService<MainWindowViewModel>();
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = viewModel,
-            };
+            // // 从 DI 容器获取 ViewModel
+            // var viewModel = _serviceProvider.GetRequiredService<MainWindowViewModel>();
+            // desktop.MainWindow = new MainWindow
+            // {
+            //     DataContext = viewModel,
+            // };
+            // 修正：从DI容器直接获取MainWindow实例（自动注入ViewModel）
+            // 替代原来手动new MainWindow + 赋值DataContext的方式
+            desktop.MainWindow = ServiceProvider.GetRequiredService<MainWindow>();
         }
 
         base.OnFrameworkInitializationCompleted();

@@ -8,7 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855d97fc-9c93-40d9-ab25-a562e6369643" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkout/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout.Tests/MainWindowViewModelTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout.Tests/MainWindowViewModelTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout.Tests/Service1AnswerStatsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout.Tests/Service1AnswerStatsTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout.Tests/Service1FormatValidationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout.Tests/Service1FormatValidationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout.Tests/Service1WrongQuestionsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout.Tests/Service1WrongQuestionsTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Models/AnswerRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Models/AnswerRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Models/Question.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Models/Question.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Resources/Questions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Resources/Questions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Services/IService1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Services/IService1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Services/Service1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Services/Service1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Services/Service2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Services/Service2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CourseWorkout/Views/MainWindow.axaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +39,17 @@
     &quot;assignee&quot;: &quot;cjavaxue&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/cjavaxue/CourseWorkout.git&quot;,
-    &quot;accountId&quot;: &quot;be3f53f6-2ce1-49f9-9b56-5c5f98c050c2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:cjavaxue/CourseWorkout.git",
+    "accountId": "be3f53f6-2ce1-49f9-9b56-5c5f98c050c2"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/QuanZhan/RiderProjects/CourseWorkout/CourseWorkout.Tests/MainWindowViewModelTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CourseWorkout.Tests/MainWindowViewModelTests.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -46,6 +63,7 @@
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -96,7 +114,18 @@
       <workItem from="1763627464713" duration="735000" />
       <workItem from="1763634958688" duration="1442000" />
       <workItem from="1763636528458" duration="256000" />
+      <workItem from="1763636896509" duration="1350000" />
+      <workItem from="1765876026465" duration="8062000" />
     </task>
+    <task id="LOCAL-00001" summary="新增viewModel测试文件">
+      <option name="closed" value="true" />
+      <created>1763636973000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763636973000</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,9 +284,33 @@
       <select />
     </coverage-tree-state>
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="b7f3fcb7-0c3e-4f53-97c5-dc3253e914f6" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="b7f3fcb7-0c3e-4f53-97c5-dc3253e914f6">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="新增viewModel测试文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增viewModel测试文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

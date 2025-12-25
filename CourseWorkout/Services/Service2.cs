@@ -98,6 +98,15 @@ public class Service2 : IService2
                         currentQuestion.CorrectAnswer = answer.Substring(0, 1);
                     }
                 }
+                // 检查是否是难度行（DIFFICULTY:）
+                else if (currentQuestion != null && trimmedLine.StartsWith("DIFFICULTY:", StringComparison.OrdinalIgnoreCase))
+                {
+                    var diffText = trimmedLine.Substring("DIFFICULTY:".Length).Trim().ToLower();
+                    if (Enum.TryParse<Difficulty>(diffText, true, out var difficulty))
+                    {
+                        currentQuestion.Difficulty = difficulty;
+                    }
+                }
             }
 
             // 保存最后一个题目

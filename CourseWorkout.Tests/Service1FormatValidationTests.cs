@@ -92,7 +92,7 @@ public class Service1FormatValidationTests
 
         // Act & Assert
         var exception = await Assert.ThrowsAsync<ArgumentException>(
-            () => service1.SaveAnswerAsync(1, "e"));
+            () => service1.SaveAnswerAsync(1, "e", 0));
         Assert.Contains("用户答案必须是 a、b、c 或 d 之一", exception.Message);
     }
 
